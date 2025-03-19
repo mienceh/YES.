@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gra - Rzut Kostkami</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 20px;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        .message {
+            margin-top: 20px;
+            font-size: 20px;
+            font-weight: bold;
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <h1>Gra w Rzut Kostkami</h1>
+    <button onclick="rollDice()">Rzuć kostkami!</button>
+    <div class="message" id="message"></div>
+
+    <script>
+        function rollDice() {
+            // Losowanie dwóch kostek
+            let dice1 = Math.floor(Math.random() * 6) + 1;
+            let dice2 = Math.floor(Math.random() * 6) + 1;
+
+            // Wyświetlanie wyników
+            document.getElementById("message").innerHTML = `Wyniki: ${dice1} i ${dice2}`;
+
+            // Sprawdzanie, czy wypadły dwie jedynki
+            if (dice1 === 1 && dice2 === 1) {
+                document.getElementById("message").innerHTML += "<br>Gratulacje użytkowniku i na chuj ci to było!";
+            }
+        }
+    </script>
+</body>
+</html>
